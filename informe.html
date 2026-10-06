@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Informe de ejemplo ficticio — Auditoría AD Express. Clínica Andalucía Salud S.L.">
+  <meta name="robots" content="noindex">
+  <title>Informe de ejemplo (FICTICIO) — Auditoría AD Express</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="watermark" aria-hidden="true"><span>FICTICIO</span></div>
+
+  <header class="nav">
+    <div class="wrap nav__inner">
+      <a href="index.html" class="nav__brand">Auditoría AD <span>Express</span></a>
+      <nav class="nav__links" aria-label="Principal">
+        <a class="btn btn--ghost btn--sm" href="index.html">← Volver</a>
+        <a class="btn btn--primary btn--sm nav__cta" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20AD%20Express">Reservar llamada</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="report-page">
+    <div class="wrap">
+      <header class="report-header reveal">
+        <span class="report-header__badge">Ejemplo ficticio</span>
+        <h1>Informe de auditoría AD</h1>
+        <p class="report-header__client">Clínica Andalucía Salud S.L.</p>
+        <p class="report-header__meta">Dominio: clinicasalud.local · Entrega: 5 días laborables · Solo lectura</p>
+      </header>
+
+      <section class="card report-section reveal">
+        <h2>Resumen ejecutivo</h2>
+        <ul class="critical-list">
+          <li>
+            <span class="tag">Crítico</span>
+            <span>Cuentas de servicio con contraseña sin rotar y privilegios de Domain Admin — camino directo a control total del dominio.</span>
+          </li>
+          <li>
+            <span class="tag">Crítico</span>
+            <span>Delegación sin restricciones en un host de aplicaciones clínicas — permite suplantar usuarios privilegiados.</span>
+          </li>
+          <li>
+            <span class="tag">Crítico</span>
+            <span>LAPS no desplegado en estaciones de trabajo; contraseñas locales de admin compartidas entre equipos.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="report-section reveal">
+        <h2>Top 5 hallazgos</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Hallazgo</th>
+                <th>Severidad</th>
+                <th>Área</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Cuentas privilegiadas sin MFA / sin rotación</td>
+                <td><span class="sev sev--crit">Crítico</span></td>
+                <td>Cuentas</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Unconstrained delegation en servidor de apps</td>
+                <td><span class="sev sev--crit">Crítico</span></td>
+                <td>Kerberos</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>LAPS ausente en workstations</td>
+                <td><span class="sev sev--crit">Crítico</span></td>
+                <td>LAPS</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>GPO con scripts ejecutables en share writable</td>
+                <td><span class="sev sev--high">Alto</span></td>
+                <td>GPO</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Cuentas de antiguos empleados aún habilitadas</td>
+                <td><span class="sev sev--med">Medio</span></td>
+                <td>Higiene</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <p class="report-header__meta reveal" style="margin-bottom: 1.5rem;">
+        Este documento es un teaser ficticio. Un informe real incluye hasta 15 riesgos, evidencia, impacto y plan 30/60/90 con orientación ENS.
+      </p>
+
+      <div class="report-back reveal">
+        <a class="btn btn--primary" href="index.html">Volver a Auditoría AD Express</a>
+        <a class="btn btn--ghost" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20AD%20Express" style="margin-left: 0.5rem;">Reservar llamada de 20 min</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>Informe de ejemplo ficticio. No corresponde a un cliente real ni a datos reales de Clínica Andalucía Salud S.L.</p>
+      <p class="footer__links"><a href="index.html">Inicio</a> · <a href="https://yoandyramirez.com" rel="noopener noreferrer">yoandyramirez.com</a></p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
