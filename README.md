@@ -1,6 +1,6 @@
-# Auditoría AD Express — Landing
+# Auditoría Web Express — Landing
 
-Landing estática premium (HTML + CSS + JS vanilla) para el servicio **Auditoría AD Express**. Sin build step. Lista para GitHub Pages.
+Landing estática premium (HTML + CSS + JS vanilla) para el servicio **Auditoría Web Express**. Sin build step. Lista para GitHub Pages.
 
 ## Abrir en local
 
@@ -21,7 +21,7 @@ Archivos:
 | Archivo | Descripción |
 |---------|-------------|
 | `index.html` | Landing principal |
-| `informe.html` | Teaser de informe ficticio |
+| `informe.html` | Teaser de informe ficticio (Hotel Costa Luz) |
 | `styles.css` | Estilos (Apple / Emil Kowalski) |
 | `main.js` | Scroll reveal + `prefers-reduced-motion` |
 
@@ -48,7 +48,7 @@ gh api repos/heindall92/auditoria-ad-express/pages -X POST \
 
 Los botones de reserva usan:
 
-`mailto:yoandyramirezdelgado@gmail.com?subject=Auditoría%20AD%20Express`
+`mailto:yoandyramirezdelgado@gmail.com?subject=Auditoría%20Web%20Express`
 
 ## Licencia / aviso
 
