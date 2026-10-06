@@ -1,117 +1,148 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Informe de ejemplo ficticio — Auditoría Web Express. Hotel Costa Luz.">
   <meta name="robots" content="noindex">
   <title>Informe de ejemplo (FICTICIO) — Auditoría Web Express</title>
-  <script>document.documentElement.classList.add('js');</script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        var l = localStorage.getItem('lang');
+        document.documentElement.setAttribute('lang', l === 'en' ? 'en' : 'es');
+      } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="watermark" aria-hidden="true"><span>FICTICIO</span></div>
+<body data-page="report">
+  <div class="watermark" aria-hidden="true"><span data-i18n="report.watermark">FICTICIO</span></div>
 
   <header class="nav">
     <div class="wrap nav__inner">
-      <a href="index.html" class="nav__brand">Auditoría Web <span>Express</span></a>
-      <nav class="nav__links" aria-label="Principal">
-        <a class="btn btn--ghost btn--sm" href="index.html">← Volver</a>
-        <a class="btn btn--primary btn--sm nav__cta" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20Web%20Express">Reservar llamada</a>
-      </nav>
+      <a href="index.html" class="nav__brand"><span data-i18n="nav.brand">Auditoría Web</span> <span>Express</span></a>
+      <div class="nav__right">
+        <nav class="nav__links" data-i18n-aria="nav.aria" aria-label="Principal">
+          <a class="btn btn--ghost btn--sm" href="index.html" data-i18n="nav.back">← Volver</a>
+          <a class="btn btn--primary btn--sm nav__cta" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20Web%20Express" data-i18n="nav.cta" data-i18n-mail="mail.subject">Reservar llamada</a>
+        </nav>
+        <div class="nav__toggles">
+          <div class="seg" role="group" data-i18n-aria="nav.theme" aria-label="Tema">
+            <button type="button" class="seg__btn" data-theme-set="light" aria-pressed="false" title="Light">
+              <svg class="seg__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+              <span class="seg__label" data-i18n="theme.light">Claro</span>
+            </button>
+            <button type="button" class="seg__btn" data-theme-set="dark" aria-pressed="true" title="Dark">
+              <svg class="seg__icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 14.3A9 9 0 1 1 9.7 3a7 7 0 0 0 11.3 11.3z"/></svg>
+              <span class="seg__label" data-i18n="theme.dark">Oscuro</span>
+            </button>
+          </div>
+          <div class="seg" role="group" data-i18n-aria="nav.lang" aria-label="Idioma">
+            <button type="button" class="seg__btn" data-lang-set="es" aria-pressed="true">ES</button>
+            <button type="button" class="seg__btn" data-lang-set="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="report-page">
     <div class="wrap">
       <header class="report-header reveal">
-        <span class="report-header__badge">Ejemplo ficticio</span>
-        <h1>Informe de auditoría web</h1>
+        <span class="report-header__badge" data-i18n="report.badge">Ejemplo ficticio</span>
+        <h1 data-i18n="report.title">Informe de auditoría web</h1>
         <p class="report-header__client">Hotel Costa Luz</p>
-        <p class="report-header__meta">Sitio: www.hotelcostaluz.example · Entrega: 5 días laborables · Solo lectura</p>
+        <p class="report-header__meta" data-i18n="report.meta">Sitio: www.hotelcostaluz.example · Entrega: 5 días laborables · Solo lectura</p>
       </header>
 
       <section class="card report-section reveal">
-        <h2>Resumen ejecutivo</h2>
+        <h2 data-i18n="report.exec">Resumen ejecutivo</h2>
         <ul class="critical-list">
           <li>
-            <span class="tag">Crítico</span>
-            <span>Panel de administración accesible sin restricción de IP ni MFA — superficie de ataque directa sobre el back-office de reservas.</span>
+            <span class="tag" data-i18n="report.crit">Crítico</span>
+            <span data-i18n="report.c1">Panel de administración accesible sin restricción de IP ni MFA — superficie de ataque directa sobre el back-office de reservas.</span>
           </li>
           <li>
-            <span class="tag">Crítico</span>
-            <span>Directorio /backups expuesto con listado de archivos — copias de configuración y datos a la vista de cualquier visitante.</span>
+            <span class="tag" data-i18n="report.crit">Crítico</span>
+            <span data-i18n="report.c2">Directorio /backups expuesto con listado de archivos — copias de configuración y datos a la vista de cualquier visitante.</span>
           </li>
           <li>
-            <span class="tag">Crítico</span>
-            <span>jQuery 1.x obsoleto con vulnerabilidades XSS conocidas cargado en páginas públicas de reservas.</span>
+            <span class="tag" data-i18n="report.crit">Crítico</span>
+            <span data-i18n="report.c3">jQuery 1.x obsoleto con vulnerabilidades XSS conocidas cargado en páginas públicas de reservas.</span>
           </li>
         </ul>
       </section>
 
       <section class="report-section reveal">
-        <h2>Top 5 hallazgos</h2>
+        <h2 data-i18n="report.top5">Top 5 hallazgos</h2>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Hallazgo</th>
-                <th>Severidad</th>
-                <th>Área</th>
+                <th data-i18n="report.thFinding">Hallazgo</th>
+                <th data-i18n="report.thSev">Severidad</th>
+                <th data-i18n="report.thArea">Área</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>1</td>
-                <td>Panel de administración expuesto a Internet</td>
-                <td><span class="sev sev--crit">Crítico</span></td>
-                <td>Auth surface</td>
+                <td data-i18n="report.f1">Panel de administración expuesto a Internet</td>
+                <td><span class="sev sev--crit" data-i18n="report.crit">Crítico</span></td>
+                <td data-i18n="report.area1">Auth surface</td>
               </tr>
               <tr>
                 <td>2</td>
-                <td>Directory listing abierto en /backups</td>
-                <td><span class="sev sev--crit">Crítico</span></td>
-                <td>Exposición</td>
+                <td data-i18n="report.f2">Directory listing abierto en /backups</td>
+                <td><span class="sev sev--crit" data-i18n="report.crit">Crítico</span></td>
+                <td data-i18n="report.area2">Exposición</td>
               </tr>
               <tr>
                 <td>3</td>
-                <td>jQuery desactualizado (riesgo XSS)</td>
-                <td><span class="sev sev--crit">Crítico</span></td>
-                <td>Dependencias</td>
+                <td data-i18n="report.f3">jQuery desactualizado (riesgo XSS)</td>
+                <td><span class="sev sev--crit" data-i18n="report.crit">Crítico</span></td>
+                <td data-i18n="report.area3">Dependencias</td>
               </tr>
               <tr>
                 <td>4</td>
-                <td>Cabecera HSTS ausente</td>
-                <td><span class="sev sev--high">Alto</span></td>
-                <td>TLS / Headers</td>
+                <td data-i18n="report.f4">Cabecera HSTS ausente</td>
+                <td><span class="sev sev--high" data-i18n="report.sevHigh">Alto</span></td>
+                <td data-i18n="report.area4">TLS / Headers</td>
               </tr>
               <tr>
                 <td>5</td>
-                <td>Cookies de sesión sin Secure / HttpOnly</td>
-                <td><span class="sev sev--med">Medio</span></td>
-                <td>Sesión</td>
+                <td data-i18n="report.f5">Cookies de sesión sin Secure / HttpOnly</td>
+                <td><span class="sev sev--med" data-i18n="report.sevMed">Medio</span></td>
+                <td data-i18n="report.area5">Sesión</td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
 
-      <p class="report-header__meta reveal" style="margin-bottom: 1.5rem;">
+      <p class="report-header__meta reveal" style="margin-bottom: 1.5rem;" data-i18n="report.note">
         Este documento es un teaser ficticio. Un informe real incluye hasta 15 riesgos, evidencia, impacto y (en Plus) plan de remediación 30/60/90 con re-test a 30 días.
       </p>
 
       <div class="report-back reveal">
-        <a class="btn btn--primary" href="index.html">Volver a Auditoría Web Express</a>
-        <a class="btn btn--ghost" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20Web%20Express" style="margin-left: 0.5rem;">Reservar llamada de 20 min</a>
+        <a class="btn btn--primary" href="index.html" data-i18n="report.back">Volver a Auditoría Web Express</a>
+        <a class="btn btn--ghost" href="mailto:yoandyramirezdelgado@gmail.com?subject=Auditor%C3%ADa%20Web%20Express" style="margin-left: 0.5rem;" data-i18n="report.cta" data-i18n-mail="mail.subject">Reservar llamada de 20 min</a>
       </div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="wrap footer__inner">
-      <p>Informe de ejemplo ficticio. No corresponde a un cliente real ni a datos reales de Hotel Costa Luz.</p>
-      <p class="footer__links"><a href="index.html">Inicio</a> · <a href="https://yoandyramirez.com" rel="noopener noreferrer">yoandyramirez.com</a></p>
+      <p data-i18n="report.footer">Informe de ejemplo ficticio. No corresponde a un cliente real ni a datos reales de Hotel Costa Luz.</p>
+      <p class="footer__links"><a href="index.html" data-i18n="report.home">Inicio</a> · <a href="https://yoandyramirez.com" rel="noopener noreferrer">yoandyramirez.com</a></p>
     </div>
   </footer>
 

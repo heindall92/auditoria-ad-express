@@ -23,7 +23,7 @@ Archivos:
 | `index.html` | Landing principal |
 | `informe.html` | Teaser de informe ficticio (Hotel Costa Luz) |
 | `styles.css` | Estilos (Apple / Emil Kowalski) |
-| `main.js` | Scroll reveal + `prefers-reduced-motion` |
+| `main.js` | Theme + i18n (ES/EN) + scroll reveal |
 
 ## GitHub Pages
 
@@ -43,6 +43,11 @@ gh api repos/heindall92/auditoria-ad-express/pages -X POST \
   -f source[branch]=main \
   -f source[path]=/
 ```
+
+## Tema e idioma
+
+- **Tema**: toggle Claro/Oscuro en la nav. Persistido en `localStorage` (`theme`). Por defecto oscuro; en la primera visita respeta `prefers-color-scheme` si no hay valor guardado. Se aplica con `data-theme` en `<html>`.
+- **Idioma**: toggle ES | EN. Persistido en `localStorage` (`lang`). Por defecto español. Traduce toda la copy de `index.html` e `informe.html`.
 
 ## Contacto CTAs
 
