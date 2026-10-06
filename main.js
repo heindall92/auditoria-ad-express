@@ -329,6 +329,11 @@
       el.setAttribute('aria-label', t(l, key));
     });
 
+    document.querySelectorAll('[data-theme-set]').forEach(function (btn) {
+      var key = btn.getAttribute('data-theme-set') === 'light' ? 'theme.light' : 'theme.dark';
+      btn.setAttribute('title', t(l, key));
+    });
+
     document.querySelectorAll('[data-i18n-mail]').forEach(function (el) {
       var key = el.getAttribute('data-i18n-mail');
       if (!key) return;
